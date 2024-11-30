@@ -212,5 +212,11 @@ public class Questions {
         Random random = new Random();
         return keys.get(random.nextInt(keys.size()));
     }
+
+    public boolean checkAnswer(String country, String userAnswer) {
+        String correctAnswer = questionAnswerPairs.get(country);
+        return correctAnswer != null && correctAnswer.equalsIgnoreCase(userAnswer.trim());
+    }
+
 }
 
