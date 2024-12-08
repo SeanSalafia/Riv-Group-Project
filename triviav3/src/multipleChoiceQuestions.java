@@ -1,7 +1,7 @@
 import java.util.*;
 
 
-public class multipleChoiceQuestions {
+public class multipleChoiceQuestions implements TriviaQuestions {
 
     HashMap<String, List<String>> questionAnswerPairs;
 
@@ -230,7 +230,7 @@ public class multipleChoiceQuestions {
         Random random = new Random();
         return keys.get(random.nextInt(keys.size()));
     }
-
+    @Override
     public boolean checkAnswer(String country, String userAnswer) {
         String correctAnswer = questionAnswerPairs.get(country).get(0);
         return correctAnswer != null && correctAnswer.equalsIgnoreCase(userAnswer.trim());
