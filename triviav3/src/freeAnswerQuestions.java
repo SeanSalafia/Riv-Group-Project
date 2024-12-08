@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Random;
 
 
-public class freeAnswerQuestions {
+public class freeAnswerQuestions implements TriviaQuestions{
 
     HashMap<String, String> questionAnswerPairs = new HashMap<>();
 
@@ -215,6 +215,8 @@ public class freeAnswerQuestions {
         Random random = new Random();
         return keys.get(random.nextInt(keys.size()));
     }
+
+    @Override
 
     public boolean checkAnswer(String country, String userAnswer) {
         String correctAnswer = questionAnswerPairs.get(country);
